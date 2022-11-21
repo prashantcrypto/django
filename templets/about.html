@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block title %}OzoneLabs||about us{% endblock %}
+
+
+
+{% block banner %}
+<div
+        class="page-banner bg-img bg-img-parallax overlay-dark"
+        style="background-image: url(../static/img/new_bg.jpg)"
+      >
+        <div class="container h-100">
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col-lg-8">
+              <nav aria-label="breadcrumb">
+                <ol
+                  class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0"
+                >
+                  <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    About
+                  </li>
+                </ol>
+              </nav>
+              <h1 class="fg-white text-center">About</h1>
+            </div>
+          </div>
+        </div>
+</div>
+{% endblock %}
+
+{% block body %} 
+{% load static %}
+<main>
+  <div class="page-section">
+    <div class="container" id="hello">
+      <div class="row align-items-center">
+        <div class="col-lg-6 py-3">
+          <div class="subhead">About Us</div>
+          <h2 class="title-section">
+            We are <span class="fg-primary">Professional Teams</span> to
+            Growth your Business
+          </h2>
+
+          <p>
+            But I must explain to you how all this mistaken idea of
+            denouncing pleasure and praising pain was born and I will give
+            you a complete account of the system, and expound the actual
+            teachings of the great explorer of
+          </p>
+        </div>
+        <div class="col-lg-6 py-3">
+          <div class="about-img">
+            <img src="{% static 'img/new_about.jpg' %}" alt="error
+            " />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- .container -->
+  </div>
+  <!-- .page-section -->
+
+  <div class="page-section">
+    <div class="container" id="hello">
+      <div class="text-center">
+        <div class="subhead">Our Teams</div>
+        <h2 class="title-section">The Expert Team in <br> Ozone Labs</h2>
+      </div>
+
+      <div class="owl-carousel team-carousel mt-5">
+
+        {% for empoly in Emp_post %}
+          
+       
+        <div class="team-wrap">
+          <div class="team-profile">
+            <img src="/img/{{empoly.Emp_photo}}" alt="" />
+          </div>
+          <div class="team-content">
+            <h5>{{empoly.Emp_name}}</h5>
+            <div class="text-sm fg-grey">{{empoly.Emp_design}}</div>
+
+            <div class="social-button">
+              <a href="#"
+                ><span class="mai-logo-facebook-messenger"></span
+              ></a>
+              <a href="#"><span class="mai-call"></span></a>
+              <a href="#"><span class="mai-mail"></span></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+  <!-- .page-section -->
+
+  <div class="page-section">
+    <div class="container-fluid">
+      <div
+        class="row row-cols-md-3 row-cols-lg-5 justify-content-center text-center"
+      >
+        <div class="py-3 px-5">
+          <img src="{% static 'img/clients/solana.png' %}" alt="" />
+        </div>
+        <div class="py-3 px-5">
+          <img src="{% static 'img/clients/magiceden.png' %}" alt="" />
+        </div>
+        <div class="py-3 px-5">
+          <img src="{% static 'img/clients/Ethereum.png' %}" alt="" />
+        </div>
+        <div class="py-3 px-5">
+          <img src="{% static 'img/clients/metaplex.png' %}" alt="" />
+        </div>
+        <div class="py-3 px-5">
+          <img src="{% static 'img/clients/polygon.png' %}" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- .container-fluid -->
+  </div>
+    <!-- .container-fluid -->
+  </div>
+  
+  <!-- .page-section -->
+</main>
+
+
+{% endblock %}
